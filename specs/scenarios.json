@@ -15,7 +15,9 @@
         "Slice nil também é aceita e imageUrls é serializado como [].",
         "Uma ou mais imagens retornam a primeira miniatura.",
         "A listagem de produtos aceita produtos sem imagens."
-      ]
+      ],
+      "presentationRole": "reserva-opcional",
+      "requiredForPresentation": false
     },
     {
       "id": "CAT-002",
@@ -29,7 +31,18 @@
         "Produto inexistente retorna 404.",
         "Produto existente retorna o contrato completo.",
         "A aplicação continua respondendo após a requisição inválida."
-      ]
+      ],
+      "presentationRole": "complementar",
+      "requiredForPresentation": false
     }
-  ]
+  ],
+  "presentation": {
+    "durationMinutes": 50,
+    "primaryScenario": "CHK-001",
+    "backupScenario": "CAT-001",
+    "startWithFaultyApplication": true,
+    "workflowStartTargetMinute": 5,
+    "resultsTargetMinute": 30,
+    "requiredRepairRepository": "bbw-checkout"
+  }
 }

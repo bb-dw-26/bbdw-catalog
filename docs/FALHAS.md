@@ -4,6 +4,8 @@ Os cenários abaixo são planejados. Ainda não há defeitos executáveis, branc
 
 ## CAT-001 — Produto sem imagem
 
+**Prioridade na apresentação:** Reserva opcional — preparar somente após o cenário principal; sem execução obrigatória ao vivo.
+
 **Preparação:** executar a revisão correspondente a `demo/cat-001` com as fixtures sintéticas e as demais dependências em versões saudáveis.
 
 **Reprodução:** `GET /products/product-no-image`
@@ -18,6 +20,8 @@ Os cenários abaixo são planejados. Ainda não há defeitos executáveis, branc
 
 
 ## CAT-002 — Produto inexistente
+
+**Prioridade na apresentação:** Complementar — fora da implementação obrigatória e da agenda de 50 minutos.
 
 **Preparação:** executar a revisão correspondente a `demo/cat-002` com as fixtures sintéticas e as demais dependências em versões saudáveis.
 

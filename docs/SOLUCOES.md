@@ -4,6 +4,8 @@ Material público para revisão e comparação. O agente pode consultá-lo, e es
 
 ## CAT-001 — Produto sem imagem
 
+**Prioridade na apresentação:** Reserva opcional — preparar somente após o cenário principal; sem execução obrigatória ao vivo.
+
 **Causa planejada:** O mapeamento calcula a miniatura com imageUrls[0], sem verificar o tamanho da slice.
 
 **Correção de referência:** Verificar se há imagens antes de acessar a primeira posição; representar a miniatura ausente como null no JSON.
@@ -19,6 +21,8 @@ Material público para revisão e comparação. O agente pode consultá-lo, e es
 
 
 ## CAT-002 — Produto inexistente
+
+**Prioridade na apresentação:** Complementar — fora da implementação obrigatória e da agenda de 50 minutos.
 
 **Causa planejada:** A busca retorna um ponteiro nil e o handler acessa seus campos.
 
