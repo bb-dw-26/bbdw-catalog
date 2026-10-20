@@ -8,3 +8,5 @@ coverage/
 bin/
 playwright-report/
 test-results/
+/server
+/server.exe

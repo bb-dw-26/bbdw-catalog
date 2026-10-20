@@ -6,7 +6,7 @@ Fornecer produtos fictícios, preços em centavos, disponibilidade e imagens opc
 
 **Tecnologia prevista:** Go, inicialmente com net/http.
 
-**Estado atual:** especificações iniciais. A aplicação, os defeitos executáveis, a integração Sentry e os workflows de CI/CD e reparo ainda serão implementados.
+**Estado atual:** scaffold funcional e saudável, com testes, Dockerfile e CI próprio. Os defeitos intencionais, Sentry, workflow do agente e deploy para hospedagem ainda serão implementados. A branch `main` não contém CHK-001; o defeito será introduzido em uma revisão isolada.
 
 ## Escopo da apresentação de 50 minutos
 
@@ -21,6 +21,26 @@ Manter quatro aplicações pequenas, dados fictícios em memória, HTTP/JSON e C
 **Papel deste repositório:** Dependência saudável em Go: listar e consultar os produtos fictícios. CAT-001 é reserva opcional; CAT-002 é material complementar. Não é necessário executar um segundo reparo ao vivo para mostrar a diversidade de tecnologias.
 
 [Roteiro completo e contingência](https://github.com/bbdw-gh-action/bbw-storefront/blob/main/docs/ROTEIRO.md).
+
+## Executar localmente
+
+Pré-requisito: Go na versão indicada em `go.mod`. O catálogo usa apenas a biblioteca padrão; as fixtures são incorporadas no binário.
+
+```sh
+go run ./cmd/server
+```
+
+Porta padrão: **3002**. `PORT` e `CORS_ORIGIN` são variáveis de ambiente; `.env.example` documenta os valores, mas o Go não carrega esse arquivo automaticamente.
+
+```sh
+go vet ./...
+go test ./...
+go build -o bin/catalog ./cmd/server
+```
+
+Encerre o processo com **Ctrl+C** ao terminar. Cada aplicação tem seu próprio lockfile ou módulo Go, testes e workflow em `.github/workflows/ci.yml`. O CI também constrói a imagem; a publicação e o deploy serão configurados quando a hospedagem for escolhida.
+
+Para iniciar as quatro aplicações juntas, consulte [execução integrada](https://github.com/bbdw-gh-action/bbw-storefront/blob/main/docs/EXECUCAO.md).
 
 ## Documentação
 

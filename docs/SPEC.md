@@ -20,7 +20,7 @@ Fornecer produtos fictícios, preços em centavos, disponibilidade e imagens opc
 
 É dono dos produtos e dos preços. Não mantém carrinhos, pedidos ou reservas de estoque nesta primeira versão.
 
-Tecnologia: Go, inicialmente com net/http. Porta local proposta: `3002`. O armazenamento inicial, quando necessário, é em memória, recriado a partir de fixtures em cada inicialização. Persistência durável fica fora desta primeira entrega.
+Tecnologia: Go, inicialmente com net/http. Porta local proposta: `3002`. Clientes e produtos vêm de fixtures em memória. A criação do pedido retorna a confirmação sem persistência ou histórico nesta versão. Persistência durável fica fora desta primeira entrega.
 
 ## Interface e regras de negócio
 
@@ -38,7 +38,7 @@ Produto de exemplo:
 
 `thumbnailUrl` é a primeira imagem quando houver imagens; caso contrário, é `null`. Os preços são inteiros não negativos. Disponibilidade é um booleano; a demo não implementa controle concorrente de estoque.
 
-As fixtures em `specs/fixtures.json` são dados de entrada para implementação e testes, não endpoints já disponíveis.
+O scaffold implementa os endpoints e fluxos obrigatórios. Users e catalog carregam as fixtures versionadas; checkout e interface usam os contratos HTTP. Os endpoints marcados como complementares permanecem fora da implementação.
 
 ## Contratos comuns
 
@@ -64,7 +64,7 @@ Se CAT-001 for preparado como reserva, instrumentar a recuperação do panic HTT
 
 **CD previsto:** Binário compilado em imagem própria, health check, configuração, deploy e rollback independentes. DSN próprio somente se a reserva CAT-001 for preparada.
 
-O destino de hospedagem será escolhido posteriormente. O workflow de reparo do checkout recebe o incidente CHK-001 e abre um PR no checkout. Workflows equivalentes nos outros repositórios ficam para uma etapa posterior. Os comandos de instalação e verificação serão adicionados junto à implementação; não há workflow de deploy executável nesta etapa.
+O destino de hospedagem será escolhido posteriormente. O workflow de reparo do checkout recebe o incidente CHK-001 e abre um PR no checkout. Workflows equivalentes nos outros repositórios ficam para uma etapa posterior. Os comandos estão no README e o CI em `.github/workflows/ci.yml`. Dockerfile disponível; ainda não há deploy para hospedagem configurado.
 
 ## Critérios de entrega para os 50 minutos
 

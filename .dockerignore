@@ -1,0 +1,12 @@
+.git
+node_modules
+dist
+coverage
+.env
+.env.*
+*.log
+bin
+test-results
+playwright-report
+/server
+/server.exe
