@@ -1,0 +1,28 @@
+[
+  {
+    "id": "product-no-image",
+    "name": "Caderno Demo",
+    "priceCents": 2500,
+    "currency": "BRL",
+    "available": true,
+    "imageUrls": []
+  },
+  {
+    "id": "product-standard",
+    "name": "Caneca Demo",
+    "priceCents": 4000,
+    "currency": "BRL",
+    "available": true,
+    "imageUrls": [
+      "/demo-assets/caneca.svg"
+    ]
+  },
+  {
+    "id": "product-unavailable",
+    "name": "Produto Indisponível",
+    "priceCents": 1000,
+    "currency": "BRL",
+    "available": false,
+    "imageUrls": []
+  }
+]
