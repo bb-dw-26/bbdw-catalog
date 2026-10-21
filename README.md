@@ -1,6 +1,6 @@
-# bbw-catalog
+# bbdw-catalog
 
-Serviço de catálogo para a demonstração pública de fluxo agêntico no BBW, apresentação do Banco do Brasil.
+Serviço de catálogo para a demonstração pública de fluxo agêntico no BBDW, apresentação do Banco do Brasil.
 
 Fornecer produtos fictícios, preços em centavos, disponibilidade e imagens opcionais.
 
@@ -20,7 +20,7 @@ Manter quatro aplicações pequenas, dados fictícios em memória, HTTP/JSON e C
 
 **Papel deste repositório:** Dependência saudável em Go: listar e consultar os produtos fictícios. CAT-001 é reserva opcional; CAT-002 é material complementar. Não é necessário executar um segundo reparo ao vivo para mostrar a diversidade de tecnologias.
 
-[Roteiro completo e contingência](https://github.com/bbdw-gh-action/bbw-storefront/blob/main/docs/ROTEIRO.md).
+[Roteiro completo e contingência](https://github.com/bbdw-gh-action/bbdw-storefront/blob/main/docs/ROTEIRO.md).
 
 ## Executar localmente
 
@@ -40,7 +40,7 @@ go build -o bin/catalog ./cmd/server
 
 Encerre o processo com **Ctrl+C** ao terminar. Cada aplicação tem seu próprio lockfile ou módulo Go, testes e workflow em `.github/workflows/ci.yml`. O CI também constrói a imagem; a publicação e o deploy serão configurados quando a hospedagem for escolhida.
 
-Para iniciar as quatro aplicações juntas, consulte [execução integrada](https://github.com/bbdw-gh-action/bbw-storefront/blob/main/docs/EXECUCAO.md).
+Para iniciar as quatro aplicações juntas, consulte [execução integrada](https://github.com/bbdw-gh-action/bbdw-storefront/blob/main/docs/EXECUCAO.md).
 
 ## Documentação
 
@@ -53,16 +53,16 @@ Para iniciar as quatro aplicações juntas, consulte [execução integrada](http
 
 ## Fluxo da demonstração
 
-Compra com CHK-001 → Sentry → issue em bbw-checkout → GitHub Actions → Codex → PR com correção e teste → revisão → deploy → repetição da requisição.
+Compra com CHK-001 → Sentry → issue em bbdw-checkout → GitHub Actions → Codex → PR com correção e teste → revisão → deploy → repetição da requisição.
 
 Cada repositório terá seu próprio CI/CD. O workflow de reparo obrigatório nesta entrega é o do checkout; a expansão para outros repositórios é posterior. Codex é a opção inicial do checkout. As soluções públicas permitem comparar o reparo com os critérios esperados; este é um exercício guiado.
 
 ## Outros repositórios
 
-- [bbw-users](https://github.com/bbdw-gh-action/bbw-users)
-- [bbw-checkout](https://github.com/bbdw-gh-action/bbw-checkout)
-- [bbw-storefront](https://github.com/bbdw-gh-action/bbw-storefront)
+- [bbdw-users](https://github.com/bbdw-gh-action/bbdw-users)
+- [bbdw-checkout](https://github.com/bbdw-gh-action/bbdw-checkout)
+- [bbdw-storefront](https://github.com/bbdw-gh-action/bbdw-storefront)
 
 ## Monitoramento Sentry
 
-SDK configurado no projeto próprio `bbw-catalog`, com captura real validada. Consulte [configuração e evidências](docs/SENTRY.md). A criação automática de issues e o reparo por agente continuam no escopo principal do checkout.
+SDK configurado no projeto próprio `bbdw-catalog`, com captura real validada. Consulte [configuração e evidências](docs/SENTRY.md). A criação automática de issues e o reparo por agente continuam no escopo principal do checkout.

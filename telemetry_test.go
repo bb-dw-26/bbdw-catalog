@@ -84,7 +84,7 @@ func TestPanicTelemetry(t *testing.T) {
 			count++
 			tags := event["tags"].(map[string]any)
 			ids[tags["request_id"].(string)] = true
-			if tags["service"] != "bbw-catalog" || event["release"] != "test-release" || event["request"] != nil || event["user"] != nil {
+			if tags["service"] != "bbdw-catalog" || event["release"] != "test-release" || event["request"] != nil || event["user"] != nil {
 				t.Fatalf("Metadados incorretos")
 			}
 		}

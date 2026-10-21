@@ -14,7 +14,7 @@ Os cenários abaixo são planejados. Ainda não há defeitos executáveis, branc
 
 **Comportamento correto:** HTTP 200 com imageUrls=[] e thumbnailUrl=null.
 
-**Telemetria:** registrar serviço `bbw-catalog`, cenário `CAT-001`, release, request ID e stack trace. A mensagem exata da exceção pode variar conforme o runtime.
+**Telemetria:** registrar serviço `bbdw-catalog`, cenário `CAT-001`, release, request ID e stack trace. A mensagem exata da exceção pode variar conforme o runtime.
 
 **Aceitação:** conferir os testes e casos vizinhos em [Soluções de referência](SOLUCOES.md), repetir a requisição e registrar as evidências em [Avaliação](AVALIACAO.md).
 
@@ -31,6 +31,6 @@ Os cenários abaixo são planejados. Ainda não há defeitos executáveis, branc
 
 **Comportamento correto:** HTTP 404 com error.code=PRODUCT_NOT_FOUND.
 
-**Telemetria:** registrar serviço `bbw-catalog`, cenário `CAT-002`, release, request ID e stack trace. A mensagem exata da exceção pode variar conforme o runtime.
+**Telemetria:** registrar serviço `bbdw-catalog`, cenário `CAT-002`, release, request ID e stack trace. A mensagem exata da exceção pode variar conforme o runtime.
 
 **Aceitação:** conferir os testes e casos vizinhos em [Soluções de referência](SOLUCOES.md), repetir a requisição e registrar as evidências em [Avaliação](AVALIACAO.md).

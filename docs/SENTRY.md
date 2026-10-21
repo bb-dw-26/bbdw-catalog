@@ -1,6 +1,6 @@
-# Sentry — bbw-catalog
+# Sentry — bbdw-catalog
 
-Organização atual: `bbdw-workshop-jj`. Projeto: `bbw-catalog`. Repositório vinculado: `bbdw-gh-action/bbw-catalog`.
+Organização atual: `bbdw-workshop-jj`. Projeto: `bbdw-catalog`. Repositório vinculado: `bbdw-gh-action/bbdw-catalog`.
 
 SDK `sentry-go` inicializado no servidor. Cada requisição recebe um hub isolado. Um panic gera um evento e resposta JSON 500; o processo continua atendendo. Respostas 404 não geram eventos.
 
@@ -25,9 +25,9 @@ O binário contém arquivo, função e linha da stack. O evento local validado n
 
 ## Validação histórica na organização anterior — 21/10/2026
 
-- Evento: [*errors.errorString: BBW SDK validation catalog sdk-20261021-110837](https://bbdw-workshop.sentry.io/issues/7804712243/).
+- Evento: [*errors.errorString: BBDW SDK validation catalog sdk-20261021-110837](https://bbdw-workshop.sentry.io/issues/7804712243/).
 - ID: `9912388552844b64ae1d00f5bc73f4e0`.
-- Release exclusiva de teste: `bbw-catalog@sdk-20261021-110837`; ambiente `bbw-sdk-validation`, cenário `SDK-SMOKE`.
+- Release exclusiva de teste: `bbdw-catalog@sdk-20261021-110837`; ambiente `bbdw-sdk-validation`, cenário `SDK-SMOKE`.
 - Um evento observado no projeto correto, sem erros de processamento do Sentry.
 - Stack: `catalog.go:94`; `telemetry.go:44`; `catalog.go:54`.
 - A falha foi introduzida somente em uma cópia temporária da aplicação e percorreu a inicialização real e o tratamento de erros. Nenhuma rota ou falha de teste foi adicionada à aplicação versionada.
@@ -41,11 +41,11 @@ O binário contém arquivo, função e linha da stack. O evento local validado n
 
 Organização `bbdw-workshop-jj`, projeto próprio e repositório homônimo conectados. O `.env` local usa o novo DSN. A organização antiga e seus eventos foram preservados.
 
-- Novo evento: [BBW-CATALOG-1](https://bbdw-workshop-jj.sentry.io/issues/7804862846/); ID `d9fdc75018bf435c98158d2fe91194c5`.
-- Release: `bbw-catalog@migration-jj-20261021-122004`.
-- Ambiente: `bbw-migration-validation`; cenário `SDK-SMOKE`; execução `migration-jj-20261021-122004`.
+- Novo evento: [BBDW-CATALOG-1](https://bbdw-workshop-jj.sentry.io/issues/7804862846/); ID `d9fdc75018bf435c98158d2fe91194c5`.
+- Release: `bbdw-catalog@migration-jj-20261021-122004`.
+- Ambiente: `bbdw-migration-validation`; cenário `SDK-SMOKE`; execução `migration-jj-20261021-122004`.
 - Um evento no projeto correto, sem erros de processamento.
 - Panic HTTP recuperado com resposta 500, stack com arquivo, função e linha; build de validação com `-trimpath`. Frames Go classificados como externos pelo SDK nesta execução, sem contexto de código inline.
-- Mapeamento: `github.com/bbdw-gh-action/bbw-catalog/` → raiz do repositório, branch `main`.
+- Mapeamento: `github.com/bbdw-gh-action/bbdw-catalog/` → raiz do repositório, branch `main`.
 
 A exceção foi gerada apenas em uma cópia isolada da aplicação, sem modificar o código saudável versionado. Todos os processos temporários foram encerrados. Os processos que já existiam antes da migração não foram reiniciados; precisam recarregar o ambiente para usar os novos DSNs.

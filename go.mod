@@ -1,4 +1,4 @@
-module github.com/bbdw-gh-action/bbw-catalog
+module github.com/bbdw-gh-action/bbdw-catalog
 
 go 1.27.3
 

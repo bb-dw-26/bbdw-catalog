@@ -19,7 +19,7 @@ func InitTelemetry() error {
 			event.Request = nil
 			event.User = sentry.User{}
 			event.Breadcrumbs = nil
-			event.ServerName = "bbw-catalog"
+			event.ServerName = "bbdw-catalog"
 			return event
 		},
 	})
@@ -30,7 +30,7 @@ func telemetryHandler(next http.Handler) http.Handler {
 		// Um hub por requisição evita misturar os IDs de chamadas concorrentes.
 		hub := sentry.CurrentHub().Clone()
 		hub.Scope().SetTags(map[string]string{
-			"service":    "bbw-catalog",
+			"service":    "bbdw-catalog",
 			"request_id": w.Header().Get("X-Request-ID"),
 			"scenario":   os.Getenv("DEMO_SCENARIO"),
 			"demo_run":   os.Getenv("DEMO_RUN_ID"),
