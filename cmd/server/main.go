@@ -11,6 +11,7 @@ import (
 	"time"
 
 	catalog "github.com/bbdw-gh-action/bbw-catalog"
+	"github.com/getsentry/sentry-go"
 )
 
 func env(key, fallback string) string {
@@ -21,6 +22,10 @@ func env(key, fallback string) string {
 }
 
 func main() {
+	if err := catalog.InitTelemetry(); err != nil {
+		log.Fatal("Configuração Sentry inválida")
+	}
+	defer sentry.Flush(2 * time.Second)
 	handler, err := catalog.NewHandler(env("CORS_ORIGIN", "http://localhost:3000"))
 	if err != nil {
 		log.Fatal(err)

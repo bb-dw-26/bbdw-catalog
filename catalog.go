@@ -66,6 +66,7 @@ func NewHandler(origin string) (http.Handler, error) {
 		}
 		problem(w, http.StatusNotFound, "PRODUCT_NOT_FOUND", "Produto não encontrado.")
 	})
+	instrumented := telemetryHandler(mux)
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		id := r.Header.Get("X-Request-ID")
 		if !validID.MatchString(id) {
@@ -89,6 +90,6 @@ func NewHandler(origin string) (http.Handler, error) {
 			problem(w, http.StatusNotFound, "NOT_FOUND", "Rota não encontrada.")
 			return
 		}
-		mux.ServeHTTP(w, r)
+		instrumented.ServeHTTP(w, r)
 	}), nil
 }
