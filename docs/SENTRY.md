@@ -41,11 +41,15 @@ O binário contém arquivo, função e linha da stack. O evento local validado n
 
 Organização `bbdw-workshop-jj`, projeto próprio e repositório homônimo conectados. O `.env` local usa o novo DSN. A organização antiga e seus eventos foram preservados.
 
-- Novo evento: [BBDW-CATALOG-1](https://bbdw-workshop-jj.sentry.io/issues/7804862846/); ID `d9fdc75018bf435c98158d2fe91194c5`.
-- Release: `bbdw-catalog@migration-jj-20261021-122004`.
-- Ambiente: `bbdw-migration-validation`; cenário `SDK-SMOKE`; execução `migration-jj-20261021-122004`.
+- Evento de migração (issue 7804862846 posteriormente excluída a pedido do responsável); ID `d9fdc75018bf435c98158d2fe91194c5`.
+- Release: `bbw-catalog@migration-jj-20261021-122004`.
+- Ambiente histórico: `bbw-migration-validation`; cenário `SDK-SMOKE`; execução `migration-jj-20261021-122004`.
 - Um evento no projeto correto, sem erros de processamento.
 - Panic HTTP recuperado com resposta 500, stack com arquivo, função e linha; build de validação com `-trimpath`. Frames Go classificados como externos pelo SDK nesta execução, sem contexto de código inline.
 - Mapeamento: `github.com/bbdw-gh-action/bbdw-catalog/` → raiz do repositório, branch `main`.
 
 A exceção foi gerada apenas em uma cópia isolada da aplicação, sem modificar o código saudável versionado. Todos os processos temporários foram encerrados. Os processos que já existiam antes da migração não foram reiniciados; precisam recarregar o ambiente para usar os novos DSNs.
+
+## Nomes corrigidos para BBDW
+
+Projeto atual: `bbdw-catalog`, vinculado a `bbdw-gh-action/bbdw-catalog`. O ID do projeto e o DSN foram preservados. Pacote/serviço, Compose, CI e documentação usam o novo nome. Os identificadores de releases acima pertencem ao ensaio anterior à renomeação. As instâncias locais antigas foram encerradas durante essa correção.
