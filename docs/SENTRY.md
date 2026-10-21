@@ -1,6 +1,6 @@
 # Sentry — bbw-catalog
 
-Organização: `bbdw-workshop`. Projeto: `bbw-catalog`. Repositório vinculado: `bbdw-gh-action/bbw-catalog`.
+Organização atual: `bbdw-workshop-jj`. Projeto: `bbw-catalog`. Repositório vinculado: `bbdw-gh-action/bbw-catalog`.
 
 SDK `sentry-go` inicializado no servidor. Cada requisição recebe um hub isolado. Um panic gera um evento e resposta JSON 500; o processo continua atendendo. Respostas 404 não geram eventos.
 
@@ -23,7 +23,7 @@ go run ./cmd/server
 
 O binário contém arquivo, função e linha da stack. O evento local validado não inclui trechos do código Go; para contexto remoto de código, configure os [code mappings do Sentry](https://docs.sentry.io/integrations/source-code-mgmt/source-context/) associados à revisão efetivamente publicada. O vínculo GitHub do projeto já existe.
 
-## Validação real — 21/10/2026
+## Validação histórica na organização anterior — 21/10/2026
 
 - Evento: [*errors.errorString: BBW SDK validation catalog sdk-20261021-110837](https://bbdw-workshop.sentry.io/issues/7804712243/).
 - ID: `9912388552844b64ae1d00f5bc73f4e0`.
@@ -36,3 +36,16 @@ O binário contém arquivo, função e linha da stack. O evento local validado n
 ## Checks
 
 `go vet ./...` e `go test ./...`: contratos HTTP e captura concorrente de panics. O teste usa um coletor HTTP local, confirma dois IDs isolados e nenhum evento para 404. `go test -race ./...` permanece no CI Linux; o ambiente Windows local não tem compilador C para o detector de corridas.
+
+## Migração validada — 21/10/2026
+
+Organização `bbdw-workshop-jj`, projeto próprio e repositório homônimo conectados. O `.env` local usa o novo DSN. A organização antiga e seus eventos foram preservados.
+
+- Novo evento: [BBW-CATALOG-1](https://bbdw-workshop-jj.sentry.io/issues/7804862846/); ID `d9fdc75018bf435c98158d2fe91194c5`.
+- Release: `bbw-catalog@migration-jj-20261021-122004`.
+- Ambiente: `bbw-migration-validation`; cenário `SDK-SMOKE`; execução `migration-jj-20261021-122004`.
+- Um evento no projeto correto, sem erros de processamento.
+- Panic HTTP recuperado com resposta 500, stack com arquivo, função e linha; build de validação com `-trimpath`. Frames Go classificados como externos pelo SDK nesta execução, sem contexto de código inline.
+- Mapeamento: `github.com/bbdw-gh-action/bbw-catalog/` → raiz do repositório, branch `main`.
+
+A exceção foi gerada apenas em uma cópia isolada da aplicação, sem modificar o código saudável versionado. Todos os processos temporários foram encerrados. Os processos que já existiam antes da migração não foram reiniciados; precisam recarregar o ambiente para usar os novos DSNs.
