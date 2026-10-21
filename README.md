@@ -66,3 +66,7 @@ Cada repositório terá seu próprio CI/CD. O workflow de reparo obrigatório ne
 ## Monitoramento Sentry
 
 SDK configurado no projeto próprio `bbdw-catalog`, com captura real validada. Consulte [configuração e evidências](docs/SENTRY.md). A criação automática de issues e o reparo por agente continuam no escopo principal do checkout.
+
+## Automação compartilhada
+
+Patchwork habilitado neste repositório. Consulte [operação, skills e MCP](docs/PATCHWORK.md).

@@ -1,0 +1,14 @@
+{
+  "repository": "bbdw-gh-action/bbdw-catalog",
+  "baseBranch": "main",
+  "runtime": "go",
+  "sentry": {
+    "org": "bbdw-workshop-jj",
+    "project": "bbdw-catalog",
+    "projectId": "4512294858129408"
+  },
+  "sourceFiles": [
+    "catalog.go"
+  ],
+  "testPattern": "^patchwork_[a-z0-9_]+_test\\.go$"
+}
