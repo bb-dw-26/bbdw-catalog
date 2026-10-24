@@ -1,5 +1,5 @@
 {
-  "repository": "bbdw-gh-action/bbdw-catalog",
+  "repository": "bb-dw-26/bbdw-catalog",
   "baseBranch": "main",
   "runtime": "go",
   "sentry": {

@@ -10,7 +10,7 @@ import (
 	"syscall"
 	"time"
 
-	catalog "github.com/bbdw-gh-action/bbdw-catalog"
+	catalog "github.com/bb-dw-26/bbdw-catalog"
 	"github.com/getsentry/sentry-go"
 )
 
