@@ -38,4 +38,4 @@ SDK configurado no projeto próprio `bbdw-catalog`, com SDK de captura. Consulte
 
 ## Automação compartilhada
 
-Integração com o Patchwork configurada no workflow local. Consulte [operação, skills e MCP](docs/PATCHWORK.md).
+O workflow chama o Patchwork por `@main`: Copilot CLI, uma verificação da aplicação e PR em rascunho, em um único job e sem artefatos. Consulte [operação, skills e MCP](docs/PATCHWORK.md).
