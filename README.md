@@ -20,7 +20,7 @@ go build -o bin/catalog ./cmd/server
 
 Encerre o processo com **Ctrl+C** ao terminar. Cada aplicação tem seu próprio lockfile ou módulo Go, testes e workflow em `.github/workflows/ci.yml`. O CI também constrói a imagem; a publicação e o deploy serão configurados quando a hospedagem for escolhida.
 
-Para iniciar as quatro aplicações juntas, consulte [execução integrada](https://github.com/bb-dw-26/bbdw-storefront/blob/main/docs/EXECUCAO.md).
+Para iniciar as três aplicações juntas, consulte [execução integrada](https://github.com/bbdw-gh-action/bbdw-storefront/blob/main/docs/EXECUCAO.md).
 
 ## Documentação
 
@@ -29,9 +29,8 @@ Para iniciar as quatro aplicações juntas, consulte [execução integrada](http
 
 ## Outros repositórios
 
-- [bbdw-users](https://github.com/bb-dw-26/bbdw-users)
-- [bbdw-checkout](https://github.com/bb-dw-26/bbdw-checkout)
-- [bbdw-storefront](https://github.com/bb-dw-26/bbdw-storefront)
+- [bbdw-checkout](https://github.com/bbdw-gh-action/bbdw-checkout)
+- [bbdw-storefront](https://github.com/bbdw-gh-action/bbdw-storefront)
 
 ## Monitoramento Sentry
 
