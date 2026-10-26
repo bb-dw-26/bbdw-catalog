@@ -15,6 +15,8 @@ var fixtures []byte
 type Product struct {
 	ID           string   `json:"id"`
 	Name         string   `json:"name"`
+	Description  string   `json:"description"`
+	Category     string   `json:"category"`
 	PriceCents   int      `json:"priceCents"`
 	Currency     string   `json:"currency"`
 	Available    bool     `json:"available"`

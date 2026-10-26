@@ -43,14 +43,11 @@ func TestProducts(t *testing.T) {
 			}
 			switch tc.path {
 			case "/products/product-no-image":
-				if body["thumbnailUrl"] != nil {
-					t.Fatal("miniatura deve ser null")
-				}
-				if images, ok := body["imageUrls"].([]any); !ok || len(images) != 0 {
-					t.Fatal("imagens devem ser []")
+				if body["thumbnailUrl"] != "/demo-assets/caderno.png" {
+					t.Fatal("caderno deve exibir sua fotografia")
 				}
 			case "/products/product-standard":
-				if body["priceCents"] != float64(4000) || body["thumbnailUrl"] != "/demo-assets/caneca.svg" {
+				if body["priceCents"] != float64(4000) || body["thumbnailUrl"] != "/demo-assets/caneca.png" {
 					t.Fatal("produto incorreto")
 				}
 			case "/products/missing":
@@ -59,5 +56,27 @@ func TestProducts(t *testing.T) {
 				}
 			}
 		})
+	}
+}
+
+func TestProductWithoutImages(t *testing.T) {
+	// A cobertura do contrato sem imagem não depende dos produtos da vitrine.
+	original := fixtures
+	defer func() { fixtures = original }()
+	for _, images := range []string{"[]", "null"} {
+		fixtures = []byte(`[{"id":"without-photo","name":"Sem foto","priceCents":1000,"currency":"BRL","available":true,"imageUrls":` + images + `}]`)
+		handler, err := NewHandler("http://localhost:3000")
+		if err != nil {
+			t.Fatal(err)
+		}
+		response := httptest.NewRecorder()
+		handler.ServeHTTP(response, httptest.NewRequest(http.MethodGet, "/products/without-photo", nil))
+		var body Product
+		if err := json.Unmarshal(response.Body.Bytes(), &body); err != nil {
+			t.Fatal(err)
+		}
+		if response.Code != 200 || body.ThumbnailURL != nil || body.ImageURLs == nil || len(body.ImageURLs) != 0 {
+			t.Fatalf("contrato sem imagem inválido: %s", response.Body.String())
+		}
 	}
 }

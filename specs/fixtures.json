@@ -1,28 +1,74 @@
 [
   {
-    "id": "product-no-image",
-    "name": "Caderno Demo",
-    "priceCents": 2500,
-    "currency": "BRL",
-    "available": true,
-    "imageUrls": []
-  },
-  {
     "id": "product-standard",
     "name": "Caneca Demo",
+    "description": "Cerâmica amarela para acompanhar o café e as boas ideias.",
+    "category": "PARA A PAUSA",
     "priceCents": 4000,
     "currency": "BRL",
     "available": true,
     "imageUrls": [
-      "/demo-assets/caneca.svg"
+      "/demo-assets/caneca.png"
+    ]
+  },
+  {
+    "id": "product-no-image",
+    "name": "Caderno Demo",
+    "description": "Capa azul, páginas livres e espaço para o próximo projeto.",
+    "category": "PARA AS IDEIAS",
+    "priceCents": 2500,
+    "currency": "BRL",
+    "available": true,
+    "imageUrls": [
+      "/demo-assets/caderno.png"
+    ]
+  },
+  {
+    "id": "product-bottle",
+    "name": "Garrafa Térmica",
+    "description": "Sua bebida por perto, da mesa de trabalho ao passeio.",
+    "category": "PARA LEVAR",
+    "priceCents": 6900,
+    "currency": "BRL",
+    "available": true,
+    "imageUrls": [
+      "/demo-assets/garrafa.png"
     ]
   },
   {
     "id": "product-unavailable",
-    "name": "Produto Indisponível",
-    "priceCents": 1000,
+    "name": "Ecobag Essencial",
+    "description": "Algodão natural e espaço para carregar seus favoritos.",
+    "category": "PARA O DIA A DIA",
+    "priceCents": 3500,
     "currency": "BRL",
     "available": false,
-    "imageUrls": []
+    "imageUrls": [
+      "/demo-assets/ecobag.png"
+    ]
+  },
+  {
+    "id": "product-shirt",
+    "name": "Camiseta Azul",
+    "description": "Uma peça simples e confortável para todos os dias.",
+    "category": "PARA VESTIR",
+    "priceCents": 7900,
+    "currency": "BRL",
+    "available": true,
+    "imageUrls": [
+      "/demo-assets/camiseta.png"
+    ]
+  },
+  {
+    "id": "product-pens",
+    "name": "Trio de Canetas",
+    "description": "Três canetas em azul e amarelo para colocar ideias no papel.",
+    "category": "PARA CRIAR",
+    "priceCents": 2900,
+    "currency": "BRL",
+    "available": true,
+    "imageUrls": [
+      "/demo-assets/canetas.png"
+    ]
   }
 ]

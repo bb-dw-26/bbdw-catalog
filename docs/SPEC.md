@@ -23,7 +23,7 @@ Tecnologia: Go com net/http. Porta local padrão: `3002`. Os produtos de `specs/
 Produto de exemplo:
 
 ```json
-{"id":"product-no-image","name":"Caderno Demo","priceCents":2500,"currency":"BRL","available":true,"imageUrls":[],"thumbnailUrl":null}
+{"id":"product-no-image","name":"Caderno Demo","priceCents":2500,"currency":"BRL","available":true,"description":"Capa azul para suas ideias.","category":"PARA AS IDEIAS","imageUrls":["/demo-assets/caderno.png"],"thumbnailUrl":"/demo-assets/caderno.png"}
 ```
 
 `thumbnailUrl` é a primeira imagem quando houver imagens; caso contrário, é `null`. Os preços são inteiros não negativos. Disponibilidade é um booleano; o serviço não implementa controle concorrente de estoque.
@@ -51,3 +51,5 @@ Os comandos locais estão no [README](../README.md). A imagem é construída pel
 ## Automação compartilhada
 
 Integração com o Patchwork configurada no workflow local. Consulte [operação, skills e MCP](PATCHWORK.md).
+
+A vitrine inclui seis produtos com fotografias locais servidas pelo storefront. O ID legado `product-no-image` continua identificando o caderno, agora com foto; o contrato de imagem opcional continua coberto por fixtures exclusivas de teste. `description` descreve o produto e `category` identifica sua coleção.
