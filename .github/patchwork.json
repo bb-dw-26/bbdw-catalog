@@ -10,5 +10,5 @@
   "sourceFiles": [
     "catalog.go"
   ],
-  "testPattern": "^patchwork_[a-z0-9_]+_test\\.go$"
+  "testPattern": "^[a-z0-9_]+_test\\.go$"
 }
